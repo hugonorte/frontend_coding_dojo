@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-from back_end.back_end import quickSort
+from back_end.back_end import initQuick
 
 app = Flask(__name__)
 
@@ -15,9 +15,9 @@ def sort_numbers():
     if not all(isinstance(n, (int, float)) for n in numbers):
         return jsonify({'error': 'All elements must be numbers'}), 400
     
-    sorted_numbers = quickSort(numbers)
+    initQuick(numbers)
     
-    return jsonify({'sorted_numbers': sorted_numbers})
+    return jsonify({'sorted_numbers': numbers})
 
 if __name__ == '__main__':
     app.run(debug=True)
