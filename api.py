@@ -1,7 +1,9 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from back_end.back_end import initQuick
 
 app = Flask(__name__)
+def home():
+    return render_template("index.html")
 
 @app.route('/sort', methods=['POST'])
 def sort_numbers():
