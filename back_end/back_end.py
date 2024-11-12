@@ -2,8 +2,6 @@
 # Matheus Cunha Nogueira / Arthur Pereira / Miguel Chaves / Vitor Garcia
 # Lucas Cardia / Erick da Silva / Felipe Braga / Diego Eufrasio
 
-import requests
-import json
 import time
 
 # Function to find the partition position
@@ -55,16 +53,3 @@ def initQuick(data):
     size = len(data)
 
     quickSort(data, 0, size - 1)
-
-start_time = time.time()
-
-data = [1, 7, 4, 1, 10, 9, -2, 0]
-print("Unsorted Array")
-print(data)
-
-initQuick(data)
-
-print('Sorted Array in Ascending Order:')
-print(data)
-
-print("--- %s seconds ---" % (time.time() - start_time))
